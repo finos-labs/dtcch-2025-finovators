@@ -1,0 +1,57 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Get device location activity",
+        "version": "1.0.0",
+        "description": "API to get call transcripts"
+    },
+    "paths": {
+        "/get-location-activity/{customerId}": {
+            "get": {
+                "summary": "Get location activity for users",
+                "description": "Get location activity for users",
+                "operationId": "getLocationActivity",
+                "parameters": [
+                    {
+                        "name": "customerId",
+                        "in": "path",
+                        "description": "Customer Id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get Device Location activity",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "transcipts": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "deviceLocationActivity": {
+                                                            "type": "string",
+                                                            "description": "DeviceLocation"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

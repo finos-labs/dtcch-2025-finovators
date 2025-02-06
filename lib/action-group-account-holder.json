@@ -1,0 +1,61 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Get account holder info API",
+    "version": "1.0.0",
+    "description": "API to get the account holder info"
+  },
+  "paths": {
+    "/get-account-holder/{customerId}": {
+      "get": {
+        "summary": "Get account holder info",
+        "description": "Get account holder info",
+        "operationId": "getAccountHolder",
+        "parameters": [
+          {
+            "name": "customerId",
+            "in": "path",
+            "description": "Customer Id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get Account Holder info",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "description": "Account Holder Name"
+                      },
+                      "spouseName": {
+                        "type": "string",
+                        "description": "Name of spouse"
+                      },
+                      "zipcode": {
+                        "type": "string",
+                        "description": "Postal code"
+                      },
+                      "email": {
+                        "type": "string",
+                        "description": "email Address"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Get customer call transcripts",
+    "version": "1.0.0",
+    "description": "API to get call transcripts"
+  },
+  "paths": {
+    "/get-call-transcripts/{customerId}": {
+      "get": {
+        "summary": "Get customer call transcripts",
+        "description": "Get customer call transcripts",
+        "operationId": "getCallTranscripts",
+        "parameters": [
+          {
+            "name": "customerId",
+            "in": "path",
+            "description": "Customer Id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get customer call transcripts",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "transcipts": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "transcript": {
+                              "type": "string",
+                              "description": "Call Transcript"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
