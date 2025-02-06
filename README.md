@@ -3,7 +3,7 @@
 # FINOS DTCC Hackathon 
 
 
-## Project Name
+## Project Name: Fraud Investigation assistant
 
 
 ### Project Details
